@@ -1,0 +1,31 @@
+//math -- completed with warnings
+		//util -- completed with warnings
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc frustum.cpp matrixSet.cpp quadTransforms.cpp sphereMesh.cpp tResponseCurve.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\math\util.bc
+		python C:\Users\Carol\Documents\GitHub\emscripten\emcc mAngAxis.cpp mathTypes.cpp mathUtils.cpp mBox.cpp mConsoleFunctions.cpp mEase.cpp mMathAltivec.cpp mMathAMD.cpp mMathSSE.cpp mMath_C.cpp mMatrix.cpp mOrientedBox.cpp mPlane.cpp mPlaneTransformer.cpp mPoint.cpp mPolyhedron.cpp mQuadPatch.cpp mQuat.cpp mRandom.cpp mRect.cpp mSolver.cpp mSphere.cpp mSplinePatch.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\math\restmatch.bc
+
+		python C:\Users\Carol\Documents\GitHub\emscripten\emcc restmatch.bc util.bc -o C:\Users\Carol\Desktop\mozilla\conversions\source\math.bc
+	//platform completed with warnings
+		//async completd with 2 warnings
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc asyncUpdate.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\async.bc
+		//input completed with warnings
+			//leapMotion completed with warnings
+				python C:\Users\Carol\Documents\GitHub\emscripten\emcc leapMotionData.cpp leapMotionDevice.cpp leapMotionFrame.cpp leapMotionFrameStore.cpp leapMotionUtil.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\input\leapMotion.bc
+			//oculusVR completed with warnings
+				python C:\Users\Carol\Documents\GitHub\emscripten\emcc barrelDistortionPostEffect.cpp oculusVRDevice.cpp oculusVRHMDDevice.cpp oculusVRSensorData.cpp oculusVRSensorDevice.cpp oculusVRUtil.cpp  -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\input\oculusVR.bc
+			//razerHydra completed with warnings
+				python C:\Users\Carol\Documents\GitHub\emscripten\emcc razerHydraData.cpp razerHydraDevice.cpp razerHydraFrame.cpp razerHydraFrameStore.cpp razerHydraUtil.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\input\razerHydra.bc
+			//rest of input completed with 2 warnings
+				python C:\Users\Carol\Documents\GitHub\emscripten\emcc event.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\inputrest.bc
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc inputrest.bc razerHydra.bc oculusVR.bc leapMotion.bc -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\input.bc
+		//menus completed with 5 warnings
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc menuBar.cpp popupMenu.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\menus.bc
+		//nativeDialogs completed with 2 warnings
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc msgBox.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\nativeDialogs.bc
+		//output no .cpp files
+		//test completed with warnings
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc testAlerts.cpp testAsyncPacketQueue.cpp testBasicTypes.cpp testFile.cpp testNet.cpp testThreading.cpp testThreadPool.cpp testThreadSafeDeque.cpp testThreadSafePriorityQueue.cpp testThreadSafeRefCount.cpp testTimeManager.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\test.bc
+		//threads completed with 1 warnings
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc threadPool.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\threads.bc
+		//platform files completed with warnings
+			python C:\Users\Carol\Documents\GitHub\emscripten\emcc platform.cpp platformAssert.cpp platformFileIO.cpp platformFont.cpp platformMemory.cpp platformRedBook.cpp platformTimer.cpp platformVideoInfo.cpp platformVolume.cpp profiler.cpp -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform\platformfiles.bc
+		python C:\Users\Carol\Documents\GitHub\emscripten\emcc platformfiles.bc threads.bc test.bc nativeDialogs.bc menus.bc input.bc async.bc -o C:\Users\Carol\Desktop\mozilla\conversions\source\platform.bc
