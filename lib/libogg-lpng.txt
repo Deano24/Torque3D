@@ -1,0 +1,58 @@
+//lib folder libogg - lpng
+	//libogg completed no warning
+		python C:\Users\Deano\Documents\emscripten\emcc bitwise.c framing.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libogg.bc
+	//libtheora completed no warnings
+		//dec completed 40 warnings unsigned enum expressions, repetitive data, redeclaration fo data type
+			//x86 completed 0 warning
+				python C:\Users\Deano\Documents\emscripten\emcc mmxfrag.c mmxidct.c mmxstate.c x86state.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\dec\x86.bc
+			//x86_vc didnt do same files as x86
+				python C:\Users\Deano\Documents\emscripten\emcc mmxfrag.c mmxidct.c mmxloopfilter.c mmxstate.c x86state.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\dec\x86_vc.bc
+			python C:\Users\Deano\Documents\emscripten\emcc apiwrapper.c bitpack.c decapiwrapper.c decinfo.c decode.c dequant.c fragment.c huffdec.c idct.c info.c internal.c quant.c state.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\dec\dec.bc
+
+			python C:\Users\Deano\Documents\emscripten\emcc dec.bc x86.bc -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\dec.bc
+
+		//enc completed with 9 warnings
+			//x86_32 completed no warning
+				python C:\Users\Deano\Documents\emscripten\emcc dct_decode_mmx.c dsp_mmx.c dsp_mmxext.c fdct_mmx.c idct_mmx.c recon_mmx.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\enc\x86_32.bc
+			//x86_64 completed no warning
+				python C:\Users\Deano\Documents\emscripten\emcc dct_decode_mmx.c dsp_mmx.c dsp_mmxext.c fdct_mmx.c idct_mmx.c recon_mmx.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\enc\x86_64.bc
+			python C:\Users\Deano\Documents\emscripten\emcc blockmap.c dct.c dct_decode.c dct_encode.c dsp.c encapiwrapper.c encode.c encoder_huffman.c encoder_idct.c encoder_quant.c encoder_toplevel.c frarray.c frinit.c mcomp.c misc_common.c pb.c pp.c reconstruct.c scan.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\enc\enc.bc
+
+			python C:\Users\Deano\Documents\emscripten\emcc enc.bc x86_32.bc x86_64.bc -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\enc.bc
+
+		python C:\Users\Deano\Documents\emscripten\emcc cpu.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora\libtheora.bc
+		python C:\Users\Deano\Documents\emscripten\emcc libtheora.bc enc.bc dec.bc -o C:\Users\Deano\Desktop\Mozilla\conversions\libtheora.bc
+	//libvorbis completed no warnings
+		python C:\Users\Deano\Documents\emscripten\emcc analysis.c bitrate.c block.c codebook.c envelope.c floor0.c floor1.c info.c lookup.c lpc.c lsp.c mapping0.c mdct.c psy.c registry.c res0.c sharedbook.c smallft.c synthesis.c vorbisenc.c vorbisfile.c window.c -o C:\Users\Deano\Desktop\Mozilla\conversions\libvorbis.bc
+	//libxml no c files only headers
+	//ljpeg cmpleted no warnings
+		//extras has multiple mains with errors cant decide which one so moving on
+			python C:\Users\Deano\Documents\emscripten\emcc ansi2knr.c cdjpeg.c cjpeg.c ckconfig.c djpeg.c example.c rdbmp.c rdcolmap.c rdgif.c rdjpgcom.c rdppm.c rdrle.c rdswitch.c rdtarga.c transupp.c wrbmp.c wrgif.c wrjpgcom.c wrppm.c wrrle.c wrtarga.c -o C:\Users\Deano\Desktop\Mozilla\conversions\ljpeg\extras.bc
+		//jpetgran all code is commented out
+		//obsolete completed no warnings
+			python C:\Users\Deano\Documents\emscripten\emcc jmemansi.c jmemdos.c jmemmac.c jmemname.c -o C:\Users\Deano\Desktop\Mozilla\conversions\ljpeg\obsolete.bc
+
+		python C:\Users\Deano\Documents\emscripten\emcc jcapimin.c jcapistd.c jccoefct.c jccolor.c jcdctmgr.c jchuff.c jcinit.c jcmainct.c jcmarker.c jcmaster.c jcomapi.c jcparam.c jcphuff.c jcprepct.c jcsample.c jctrans.c jdapimin.c jdapistd.c jdatadst.c jdatasrc.c jdcoefct.c jdcolor.c jddctmgr.c jdhuff.c jdinput.c jdmainct.c jdmarker.c jdmaster.c jdmerge.c jdphuff.c jdpostct.c jdsample.c jdtrans.c jerror.c jfdctflt.c jfdctfst.c jfdctint.c jidctflt.c jidctfst.c jidctint.c jidctred.c jmemmgr.c jmemnobs.c jquant1.c jquant2.c jutils.c -o C:\Users\Deano\Desktop\Mozilla\conversions\ljpeg\ljpeg.bc
+
+		python C:\Users\Deano\Documents\emscripten\emcc ljpeg.bc obsolete.bc -o C:\Users\Deano\Desktop\Mozilla\conversions\ljpeg.bc
+	//lmng completed 25 warnings warnings are about memory address and hexadecimal addresses
+		//bcb ignoring
+			//bogus ignoring
+				python C:\Users\Deano\Documents\emscripten\emcc bogus.cpp -o C:\Users\Deano\Desktop\Mozilla\conversions\lmng\bcb\bogus.bc
+			//mngrepair ignoring
+				python C:\Users\Deano\Documents\emscripten\emcc mngrepair.cpp -o C:\Users\Deano\Desktop\Mozilla\conversions\lmng\bcb\mngrepair.bc
+			//mngtree ignoring
+				python C:\Users\Deano\Documents\emscripten\emcc mngtree.cpp -o C:\Users\Deano\Desktop\Mozilla\conversions\lmng\bcb\mngtree.bc
+		//contrib ignoring contains lots of file dependecies that cannot be verified
+			//bcb
+				python C:\Users\Deano\Documents\emscripten\emcc About.cpp Help.cpp Main.cpp MNGDUMP.cpp -o C:\Users\Deano\Desktop\Mozilla\conversions\lmng\contrib\bcb.bc
+		//doc is only documentation
+		//makefiles contains no cpp files
+		//special contains no cpp files
+		//unmaintained no cpp files
+		python C:\Users\Deano\Documents\emscripten\emcc libmng_callback_xs.c libmng_chunk_descr.c libmng_chunk_io.c libmng_chunk_prc.c libmng_chunk_xs.c libmng_cms.c libmng_display.c libmng_dither.c libmng_error.c libmng_filter.c libmng_hlapi.c libmng_jpeg.c libmng_object_prc.c libmng_pixels.c libmng_prop_xs.c libmng_read.c libmng_trace.c libmng_write.c libmng_zlib.c -o C:\Users\Deano\Desktop\Mozilla\conversions\lmng.bc
+	//lpng completed no warnings
+		//contrib folder contains same problems as lmng contrib folder so ignoring
+		//projects this folder contains visual studion project files and no cpp files
+		//scripts no cpp files
+		python C:\Users\Deano\Documents\emscripten\emcc example.c png.c pngerror.c pngget.c pngmem.c pngpread.c pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtest.c pngtrans.c pngwio.c pngwrite.c pngwtran.c pngwutil.c -o C:\Users\Deano\Desktop\Mozilla\conversions\lpng.bc
